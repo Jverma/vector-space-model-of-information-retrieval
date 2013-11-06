@@ -1,0 +1,15 @@
+This repo contains a MapReduce implementation of Vector Space Model of Information Retrieval. 
+
+Scripts : 
+1. MapReduce.py - implements mapreduce in python
+2. vs_inverted_index - computes inverted index of tf-idf vectors
+3. length.py - computes lengths of tf-idf vectors
+4. alpha.py - computes cosine similarity with a specific query and returns documents ordered to their relevance. 
+
+Procedure : 
+Offline - 
+1. python vs_inverted_index "input_corpus_of_documents" > index
+2. python length index > vector_lengths
+Online - 
+1. Enter the query in alpha.py
+2. python alpha.py vector_length index > output
