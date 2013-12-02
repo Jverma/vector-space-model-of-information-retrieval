@@ -1,16 +1,20 @@
 This repo contains an implementation of Vector Space Model of Information Retrieval. 
 VSM is the backbone of almost all the search engines. This implementation is built on the MapReduce framework. Here the MapReduce executes entirely on a single machine, it does not involve parallel computation. But it can be easily be extended to the distributed file system.
 
+
 Scripts : 
-1. MapReduce.py - implements mapreduce in python
-2. inverted_index - computes inverted index of tf-idf vectors
-3. length.py - computes lengths of tf-idf vectors
-4. cosine.py - computes cosine similarity with a specific query and returns documents ordered to their relevance. 
+1. corpus.py - combines all the text files into a single json file where each line is of form [doc_id, text_contents]
+2. MapReduce.py - implements mapreduce in python
+3. inverted_index - computes inverted index of tf-idf vectors
+4. length.py - computes lengths of tf-idf vectors
+5. cosine.py - computes cosine similarity with a specific query and returns documents ordered according to their relevance. 
+
 
 Procedure : 
 Offline - 
-1. python inverted_index "input_corpus_of_documents" > index.txt
-2. python length.py index.txt > vector_lengths.txt
+1. python corpus.py "input_corpus_of_documents" > big_input.txt
+2. python inverted_index big_input.txt > index.txt
+3. python length.py index.txt > vector_lengths.txt
 
 Online - 
 1. Enter the query in cosine.py
