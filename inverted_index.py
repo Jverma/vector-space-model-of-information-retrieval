@@ -44,8 +44,10 @@ def reducer(key, list_of_values):
         if not(x in index):
             index.append(x)
             count =  count + 1
-    df = float(count)/float(number_of_documents)        
-    idf = log(df, 2)        
+    df = float(number_of_documents)/float(count)        
+    idf = log(df, 2) 
+    for y in index:
+        y[1] = y[1]*idf
     mr.emit((key,count, index))
     
 #output = [term, no of docs containing the term, tf-idf]
