@@ -19,3 +19,7 @@ Offline -
 
 Online - 
 python cosine.py "search query" 
+
+Notice that the expensive operations like computing inverted index and the length of the vectors are done offline and are written in Mapreduce framework.
+This saves time and when we search for a query, only cosine.py is working and with inverted index set-up computation of similarity if very quick. 
+
