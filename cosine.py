@@ -16,7 +16,7 @@ length_vectors = {}
 #open the json file containg lengths of tf-idf vectors of all documents
 # line = [doc_id, length_of_vector]
 cosine_similarity = {}
-doc_lengths = open(sys.argv[1])
+doc_lengths = open(vector_length.txt)
 for line in doc_lengths:
     data = json.loads(line)
     doc_id = data[0]
@@ -30,7 +30,7 @@ for line in doc_lengths:
 Index = {}
 #open the inverted index
 # line = [word, [doc_id, tf-idf]]
-inverted_index = open(sys.argv[2])
+inverted_index = open(index.txt)
 for line in inverted_index:
     data = json.loads(line)
     word =  data[0]
@@ -55,5 +55,5 @@ def relevance(query):
     return sorted_similarity
 
 #Enter query
-#query =
-#print relevance(query)
+search_query = sys.argv[1]
+print relevance(search_query)
