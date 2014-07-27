@@ -1,5 +1,6 @@
-This repo contains an implementation of Vector Space Model of Information Retrieval. 
-VSM is the backbone of almost all the search engines. This implementation is built on the MapReduce framework. Here the MapReduce executes entirely on a single machine, it does not involve parallel computation. But it can be easily be extended to the distributed file system.
+This repository contains an implementation of Vector Space Model of Information Retrieval. 
+VSM is the backbone of almost all the search engines. This implementation is built on the MapReduce framework. 
+Here the MapReduce executes entirely on a single machine, it does not involve parallel computation. But it can be easily be extended to the distributed file system.
 
 
 Scripts : 
@@ -17,5 +18,4 @@ Offline -
 3. python length.py index.txt > vector_lengths.txt
 
 Online - 
-1. Enter the query in cosine.py
-2. python cosine.py vector_length.txt index.txt > output.txt
+python cosine.py "search query" 
